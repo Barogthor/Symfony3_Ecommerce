@@ -1,0 +1,40 @@
+{% extends 'Admin/base.html.twig' %}
+
+{% block body %}
+    <h1>Tvas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Multiplicate</th>
+                <th>Libelle</th>
+                <th>Valeur</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tva in tvas %}
+            <tr>
+                <td><a href="{{ path('admin_tva_show', { 'id': tva.id }) }}">{{ tva.id }}</a></td>
+                <td>{{ tva.multiplicate }}</td>
+                <td>{{ tva.libelle }}</td>
+                <td>{{ tva.valeur }}</td>
+                <td>
+
+                            <a href="{{ path('admin_tva_edit', { 'id': tva.id }) }}"><i class="icon-edit"></i></a>
+
+                            <a href="{{ path('admin_tva_delete', { 'id': tva.id }) }}"><i class="icon-remove"></i></a>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_tva_new') }}">Create a new tva</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block titre %}Ecommerce Fruit & Légumes{% endblock %}</title>
+        <meta name="keywords" content="{% block motCles %}{% endblock %}" />
+        <meta name="description" content="{% block description %}{% endblock %}" />
+    </head>
+        {% block stylesheets %}
+
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+            <link rel="stylesheet" href="{{ asset('bootstrap-responsive.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}" />
+            <style>
+                body{margin:0;}
+            </style>
+
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block header %}
+            {% include('header.html.twig') %}
+        {% endblock %}
+
+        {% block body %}{% endblock %}
+
+        {% block footer %}
+            {% include('footer.html.twig') %}
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

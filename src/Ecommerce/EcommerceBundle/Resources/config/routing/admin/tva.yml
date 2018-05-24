@@ -1,0 +1,24 @@
+admin_tva_index:
+    path:     /
+    defaults: { _controller: "EcommerceBundle:TvaAdmin:index" }
+    methods:  GET
+
+admin_tva_show:
+    path:     /{id}/show
+    defaults: { _controller: "EcommerceBundle:TvaAdmin:show" }
+    methods:  GET
+
+admin_tva_new:
+    path:     /new
+    defaults: { _controller: "EcommerceBundle:TvaAdmin:new" }
+    methods:  [GET, POST]
+
+admin_tva_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EcommerceBundle:TvaAdmin:edit" }
+    methods:  [GET, POST]
+
+admin_tva_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EcommerceBundle:TvaAdmin:delete" }
+    methods:  DELETE

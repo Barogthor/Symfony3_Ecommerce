@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+
+            {% include('navigation.html.twig') %}
+            <div class="span9">
+
+                <ul class="thumbnails">
+                    {% if produits|length != 0 %}
+                    {% for produit in produits %}
+                    <li class="span3">
+                        <div class="thumbnail">
+                            <img src="{{ asset(produit.image.AssetPath) }}" alt="{{ produit.image.name }}" style="width:300px;height:300px">
+                            <div class="caption">
+                                <h4>{{ produit.nom }}</h4>
+                                <p>{{ produit.prix|tva(produit.tva.multiplicate) }}€</p>
+                                <a class="btn btn-primary" href="{{ path('produit',{ "id" : produit.id }) }}">Plus d'infos</a>
+                                {% if panier[produit.id] is not defined %}
+                                <a class="btn btn-success" href="{{ path('ajouter', {'id' : produit.id}) }}">Ajouter au panier</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+
+                <div class="pagination">
+                    {{ knp_pagination_render(produits) }}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+

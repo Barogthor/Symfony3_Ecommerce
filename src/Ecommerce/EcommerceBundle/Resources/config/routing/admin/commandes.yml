@@ -1,0 +1,10 @@
+admin_commandes_index:
+    path:     /
+    defaults: { _controller: "EcommerceBundle:CommandesAdmin:index" }
+    methods:  GET
+
+admin_commandes_show:
+    path:     /{id}/show
+    defaults: { _controller: "EcommerceBundle:CommandesAdmin:show" }
+    methods:  GET
+

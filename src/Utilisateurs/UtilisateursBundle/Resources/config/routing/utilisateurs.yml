@@ -1,0 +1,24 @@
+admin_utilisateurs_index:
+    path:     /
+    defaults: { _controller: "UtilisateursBundle:UtilisateursAdmin:index" }
+    methods:  GET
+
+admin_utilisateurs_show:
+    path:     /{id}/show
+    defaults: { _controller: "UtilisateursBundle:UtilisateursAdmin:show" }
+    methods:  GET
+
+admin_utilisateurs_new:
+    path:     /new
+    defaults: { _controller: "UtilisateursBundle:UtilisateursAdmin:new" }
+    methods:  [GET, POST]
+
+admin_utilisateurs_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UtilisateursBundle:UtilisateursAdmin:edit" }
+    methods:  [GET, POST]
+
+admin_utilisateurs_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UtilisateursBundle:UtilisateursAdmin:delete" }
+    methods:  DELETE

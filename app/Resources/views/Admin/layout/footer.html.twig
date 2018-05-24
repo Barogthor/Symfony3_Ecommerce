@@ -1,0 +1,38 @@
+	<hr />
+
+	<footer id="footer" class="vspace20">
+        <div class="container">
+            <div class="row">
+                <div class="span4">
+                    <p>&copy; Copyright 2014 - DevAndClick</p>
+                </div>
+        </div>
+	</footer>
+    <script src="{{ asset('js/jquery-1.10.0.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <script src="{{ asset('bundles/pages/ckeditor/ckeditor.js') }}"></script>
+    <script type="text/javascript">
+
+        CKEDITOR.replace( document.querySelector('.ckeditor').id);
+        jQuery('.ckeditor').each(function(i, el){
+            var ta = jQuery(el);
+
+            CKEDITOR.instances[ta.attr('id')].setData(ta.val());
+
+        });
+
+        for ( var instance in CKEDITOR.instances )
+            CKEDITOR.instances[instance].on("instanceReady", function() {
+                this.document.on("keyup", CK_jQ);
+                this.document.on("paste", CK_jQ);
+                this.document.on("keypress", CK_jQ);
+                this.document.on("blur", CK_jQ);
+                this.document.on("change", CK_jQ);
+
+            });
+
+        function CK_jQ() {
+            for ( var instance in CKEDITOR.instances ) { CKEDITOR.instances[instance].updateElement(); }
+        }
+
+    </script>

@@ -1,0 +1,11 @@
+utilisateurs_admin_utilisateurs:
+    resource: "@UtilisateursBundle/Resources/config/routing/utilisateurs.yml"
+    prefix:   /admin/utilisateurs
+
+factures:
+    path: /profile/factures
+    defaults: { _controller: "UtilisateursBundle:Utilisateurs:factures" }
+
+facturesPDF:
+    path: /profile/factures/pdf/{id}
+    defaults: { _controller: "UtilisateursBundle:Utilisateurs:facturesPDF" }

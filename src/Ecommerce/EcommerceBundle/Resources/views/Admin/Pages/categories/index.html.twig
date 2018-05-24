@@ -1,0 +1,36 @@
+{% extends 'Admin/base.html.twig' %}
+
+{% block body %}
+    <h1>Categories list</h1>
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td><a href="{{ path('admin_categories_show', { 'id': category.id }) }}">{{ category.id }}</a></td>
+                <td>{{ category.nom }}</td>
+                <td>
+
+                            <a href="{{ path('admin_categories_edit', { 'id': category.id }) }}"><i class="icon-edit"></i></a>
+
+                            <a href="{{ path('admin_categories_delete', { 'id': category.id }) }}"><i class="icon-remove"></i></a>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_categories_new') }}">Create a new category</a>
+        </li>
+    </ul>
+{% endblock %}
