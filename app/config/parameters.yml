@@ -1,0 +1,17 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: eCommerce
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: no-reply@mail.com
+    mailer_password: pass
+    secret: eCommerceLearning
+twig:
+    globals:
+        telephone: '02 35 00 00 00'
+        fax: '02 35 00 00 00'
+        entrepot: 'Paris 75 000 - 3 rue des jardins'
