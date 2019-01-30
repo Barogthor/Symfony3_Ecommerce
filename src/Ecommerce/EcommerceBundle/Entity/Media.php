@@ -124,9 +124,19 @@ class Media
 
     }
 
+
+    public function setPath($path){
+        $this->path = $path;
+
+    }
+
+
     public function getName(){
         return $this->name;
     }
+
+
+
 
 
 

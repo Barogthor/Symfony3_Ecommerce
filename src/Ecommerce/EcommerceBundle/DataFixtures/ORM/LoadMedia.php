@@ -21,41 +21,41 @@ class LoadMedia extends AbstractFixture implements FixtureInterface, OrderedFixt
     {
         $media1 = new Media();
         $media1->setPath('http://cp.lakanal.free.fr/exercices/jeux/memory/legumes/legumes.png');
-        $media1->setAlt('Légumes');
+        $media1->name = 'Légumes';
         $manager->persist($media1);
 
         $media2 = new Media();
         $media2->setPath('http://img0.mxstatic.com/wallpapers/238cdfc903a19ad39ea901619dd55d47_large.jpeg');
-        $media2->setAlt('Fruits');
+        $media2->name = 'Fruits';
         $manager->persist($media2);
         $media3 = new Media();
         $media3->setPath('https://bornandprimeurs.fr/66-large_default/poivrons-rouge-espagne.jpg');
-        $media3->setAlt('Poivron rouge');
+        $media3->name = 'Poivron rouge';
         $manager->persist($media3);
 
         $media4 = new Media();
         $media4->setPath('http://www.hortitecnews.com/wp-content/uploads/2015/02/field_image_piment.png');
-        $media4->setAlt('Piment');
+        $media4->name = 'Piment';
         $manager->persist($media4);
 
         $media5 = new Media();
         $media5->setPath('http://www.niffylux.com/image-gratuite/Tomate__7_4b71e7e13f85b.jpg');
-        $media5->setAlt('Tomate');
+        $media5->name = 'Tomate';
         $manager->persist($media5);
 
         $media6 = new Media();
         $media6->setPath('https://www.totavo.com/1037-large/poivron-vert-unite.jpg');
-        $media6->setAlt('Poivron vert');
+        $media6->name = 'Poivron vert';
         $manager->persist($media6);
 
         $media7 = new Media();
         $media7->setPath('http://www.boitearecettes.com/fruits_legumes/raisins-6.gif');
-        $media7->setAlt('Raisin');
+        $media7->name = 'Raisin';
         $manager->persist($media7);
 
         $media8 = new Media();
         $media8->setPath('https://www.lesfruitsetlegumesfrais.com/_upload/cache/ressources/produits/orange/orange_346_346_filled.jpg');
-        $media8->setAlt('Orange');
+        $media8->name = 'Orange';
         $manager->persist($media8);
 
         $manager->flush();
